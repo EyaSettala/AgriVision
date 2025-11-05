@@ -1,0 +1,2121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri Vision Tunisia - Cultivating a Greener Future</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2d3748;
+            background-color: #ffffff;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2f855a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2f855a;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            padding: 0.75rem 0;
+            margin: 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid #e2e8f0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f7fafc;
+            color: #2f855a;
+            border-left-color: #2f855a;
+            transform: translateX(5px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(47, 133, 90, 0.8) 0%, rgba(56, 161, 105, 0.8) 100%),
+                url('harvest-field.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #ffffff;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #2f855a;
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background-color: #f7fafc;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* About Us Section */
+        .about-us {
+            margin-bottom: 5rem;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content {
+            padding-right: 2rem;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2f855a;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(47, 133, 90, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-placeholder:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(47, 133, 90, 0.25);
+        }
+
+        .image-placeholder svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            border-radius: 16px;
+            padding: 4rem 2rem;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .mission-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2f855a;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Activities Section */
+        .activities {
+            margin-bottom: 5rem;
+        }
+
+        .activities-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2f855a;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background-color: #f7fafc;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #e2e8f0;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(47, 133, 90, 0.15);
+        }
+
+        .activity-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .activity-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2f855a;
+            margin-bottom: 1rem;
+        }
+
+        .activity-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button.primary {
+            background-color: #2f855a;
+            color: #ffffff;
+        }
+
+        .cta-button.primary:hover {
+            background-color: #276749;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(47, 133, 90, 0.3);
+        }
+
+        .cta-button.secondary {
+            background-color: #ffffff;
+            color: #2f855a;
+            border: 2px solid #2f855a;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: #2f855a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(47, 133, 90, 0.3);
+        }
+
+        /* News Section */
+        .news-section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2f855a;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2f855a, #38a169);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(47, 133, 90, 0.15);
+        }
+
+        .news-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #2f855a;
+            border-radius: 12px 12px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .news-image-placeholder {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: #68d391;
+        }
+
+        .news-image-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .news-content {
+            padding: 2rem;
+        }
+
+        .news-date {
+            color: #68d391;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .news-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2f855a;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-btn {
+            background: linear-gradient(135deg, #2f855a, #38a169);
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .read-more-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .read-more-btn:hover::before {
+            left: 100%;
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(47, 133, 90, 0.3);
+        }
+
+        .news-full-content {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            color: #4a5568;
+            line-height: 1.6;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            border-radius: 16px;
+            padding: 4rem 2rem;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(47, 133, 90, 0.05) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-card.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .testimonial-content {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .testimonial-text {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2f855a, #38a169);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(47, 133, 90, 0.3);
+        }
+
+        .author-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #2f855a;
+            margin: 0;
+        }
+
+        .author-role {
+            color: #68d391;
+            margin: 0.25rem 0 0 0;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-btn {
+            background-color: #2f855a;
+            color: #ffffff;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-btn:hover {
+            background-color: #276749;
+            transform: scale(1.1);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #2f855a;
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                max-height: 200px;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll animations */
+        [data-aos="fade-up"] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        [data-aos="fade-up"].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        [data-aos="fade-in"] {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        [data-aos="fade-in"].aos-animate {
+            opacity: 1;
+        }
+
+        /* Interactive hover effects */
+        .activity-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .activity-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(47, 133, 90, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .activity-card:hover::after {
+            left: 100%;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #ffffff;
+            padding: 4rem 0 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #68d391;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #2f855a, #68d391);
+            border-radius: 2px;
+        }
+
+        /* Contact Information */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .contact-details p {
+            margin: 0;
+            line-height: 1.6;
+            color: #e2e8f0;
+        }
+
+        /* Footer Links */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            border-left: 3px solid transparent;
+            padding-left: 1rem;
+            margin-left: -1rem;
+        }
+
+        .footer-links a:hover {
+            color: #68d391;
+            border-left-color: #68d391;
+            transform: translateX(5px);
+        }
+
+        /* Newsletter Form */
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #68d391;
+        }
+
+        .form-input {
+            padding: 0.75rem 1rem;
+            border: 2px solid #4a5568;
+            border-radius: 8px;
+            background-color: #2d3748;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #68d391;
+            box-shadow: 0 0 0 3px rgba(104, 211, 145, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: #a0aec0;
+        }
+
+        .newsletter-btn {
+            background: linear-gradient(135deg, #2f855a, #38a169);
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(47, 133, 90, 0.4);
+        }
+
+        .newsletter-btn:hover::before {
+            left: 100%;
+        }
+
+        .newsletter-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Social Media */
+        .social-media {
+            margin-top: 1rem;
+        }
+
+        .social-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #68d391;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #4a5568;
+            border-radius: 50%;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2f855a, #68d391);
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .social-link:hover::before {
+            transform: scale(1);
+        }
+
+        .social-link svg {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(47, 133, 90, 0.3);
+        }
+
+        .social-link:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .copyright {
+            margin: 0;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, #38a169, #68d391);
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 600;
+            animation: slideInUp 0.5s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                background-color: transparent;
+                padding: 0;
+                margin-top: 0.5rem;
+                display: none;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu a {
+                padding: 0.5rem 0;
+                font-size: 0.85rem;
+                border-left: none;
+                transform: none;
+            }
+
+            .dropdown-menu a:hover {
+                background-color: transparent;
+                transform: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .mission-title,
+            .activities-title,
+            .section-title,
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .about-content {
+                padding-right: 0;
+                order: 2;
+            }
+
+            .about-image {
+                order: 1;
+            }
+
+            .activities-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .testimonial-controls {
+                gap: 1rem;
+            }
+
+            .testimonial-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .testimonials-section {
+                padding: 2rem 1rem;
+            }
+
+            .testimonial-content {
+                padding: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer {
+                padding: 3rem 0 1.5rem 0;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .contact-icon {
+                align-self: flex-start;
+            }
+        }
+    </style>
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+  <div class="logo-circle">
+    <img src="Type_1__green_bg_and_in_cercle_-removebg-preview.png" alt="Logo Agri Vision Tunisia">
+  </div>
+  <span class="logo-text">AgriVision Tunisia</span>
+</div>
+
+<style>
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: Arial, sans-serif;
+  }
+
+  .logo-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .logo-circle img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-circle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 10px rgba(46, 125, 50, 0.4);
+  }
+
+  .logo-circle:hover img {
+    transform: scale(1.05);
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+</style>
+
+            <ul class="nav-links">
+                <li><a href="#home" onclick="smoothScroll('#home')">Home</a></li>
+                <li><a href="#about" onclick="smoothScroll('#about')">About Us</a></li>
+                <li class="dropdown"><a href="#work" onclick="smoothScroll('#work')" class="dropdown-toggle">What We Do
+                        <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#work" onclick="smoothScroll('#work')">Our Work</a></li>
+                        <li><a href="#news" onclick="smoothScroll('#news')">News</a></li>
+                        <li><a href="#testimonials" onclick="smoothScroll('#testimonials')">Testimonials</a></li>
+                    </ul>
+                </li>
+                <li><a href="#involved" onclick="smoothScroll('#involved')">Get Involved</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="home">
+        <svg class="hero-pattern" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="leaf-pattern" x="0" y="0" width="100" height="100" patternunits="userSpaceOnUse">
+                    <path d="M20 50 Q30 30 40 50 T60 50" fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M60 30 Q70 10 80 30 T100 30" fill="none" stroke="currentColor" stroke-width="2" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#leaf-pattern)" />
+        </svg>
+        <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">Grow Smart. Waste Less. Sustain More.</h1><a href="#involved"
+                class="hero-cta" id="hero-cta">Join Us</a>
+        </div>
+    </section>
+    <main>
+        <section class="about-us" id="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2 class="about-title" id="about-title">About Us</h2>
+                    <p class="about-text" id="about-text">AgriVision Tunisia is a non-profit organization committed to
+                        promoting sustainable agriculture and protecting Tunisia's natural resources. We work with
+                        farmers, youth, and local communities to restore degraded lands, encourage eco-friendly farming
+                        practices, and raise awareness about the importance of preserving biodiversity. Our goal is to
+                        build a future where agriculture and nature grow together productively, responsibly, and
+                        sustainably.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <img src="Type 1 (white bg).png" alt="Sustainable farming in Tunisia" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mission" id="mission">
+            <h2 class="mission-title" id="mission-title">Our Mission</h2>
+            <p class="mission-text" id="mission-text">We strive to combat land degradation and resource overuse by
+                promoting sustainable farming, biodiversity conservation, and community empowerment across Tunisia.</p>
+        </section>
+        <section class="activities" id="work">
+            <h2 class="activities-title" id="activities-title">What We Do</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        🌱
+                    </div>
+                    <h3 class="activity-title" id="activity-1-title">Eco-Friendly Agriculture</h3>
+                    <p class="activity-desc" id="activity-1-desc">Promoting eco-friendly agriculture that regenerates
+                        the soil.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        🎓
+                    </div>
+                    <h3 class="activity-title" id="activity-2-title">Farmer Education</h3>
+                    <p class="activity-desc" id="activity-2-desc">Educating farmers on responsible resource management.
+                    </p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        💚
+                    </div>
+                    <h3 class="activity-title" id="activity-3-title">Green Technologies</h3>
+                    <p class="activity-desc" id="activity-3-desc">Introducing green technologies that reduce emissions
+                        and waste.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        🤝
+                    </div>
+                    <h3 class="activity-title" id="activity-4-title">Community Empowerment</h3>
+                    <p class="activity-desc" id="activity-4-desc">Empowering rural communities with sustainable
+                        livelihoods.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        💡
+                    </div>
+                    <h3 class="activity-title" id="activity-5-title">Local Project Support</h3>
+                    <p class="activity-desc" id="activity-5-desc">Support local project ideas that promote sustainable
+                        agriculture.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        👨‍🌾
+                    </div>
+                    <h3 class="activity-title" id="activity-6-title">Youth in Agriculture</h3>
+                    <p class="activity-desc" id="activity-6-desc">Encouraging young innovators to engage in sustainable and modern farming practices.</p>
+                </div>
+            </div>
+        </section>
+        <section class="news-section" id="news">
+            <h2 class="section-title" id="news-title">Latest News</h2>
+            <div class="news-grid">
+                <article class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-image">
+                        <div class="news-image-placeholder">
+                            <div class="news-image-text">
+                                <img src="Green and Yellow Modern Farm Services Poster.png"
+                                    alt="AgriVision Innovation Challenge" class="news-img">
+                            </div>
+
+                            <style>
+                                .news-image-text {
+                                    width: 100%;
+                                    height: 250px;
+                                    /* Ajuste ici la hauteur de la partie visible */
+                                    overflow: hidden;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: flex-start;
+                                    background: #d8e0d0;
+                                    /* couleur de fond si l'image charge lentement */
+                                }
+
+                                .news-img {
+                                    width: 100%;
+                                    object-fit: cover;
+                                    object-position: top center;
+                                    /* Montre le haut de l'image */
+                                    display: block;
+                                }
+                            </style>
+
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date" id="news-1-date">
+                            December 2, 2026
+                        </div>
+                        <h3 class="news-title" id="news-1-title">AgriVision Innovation Challenge Launched</h3>
+                        <p class="news-excerpt" id="news-1-excerpt">We're excited to announce the launch of the
+                            "AgriVision Innovation Challenge" for eco-project pitches, offering mentorship, workshops,
+                            and seed funding with local investors.</p><button class="read-more-btn"
+                            onclick="toggleNewsContent(1)">Read More</button>
+                        <div class="news-full-content" id="news-content-1" style="display: none;">
+                            <p>This groundbreaking initiative will support 3 winning projects with comprehensive
+                                financial and technical assistance. Participants will benefit from expert mentorship,
+                                specialized workshops, and direct access to local investors committed to sustainable
+                                agriculture. The challenge aims to foster innovation in eco-friendly farming solutions
+                                and empower the next generation of agricultural entrepreneurs in Tunisia.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-image">
+                        <div class="news-image-placeholder">
+                            <div class="news-image-text">
+                                <img src="Beige and Green Modern Green Energy Logo.png"
+                                    alt="AgriVision Innovation Challenge" class="news-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date" id="news-2-date">
+                            October 28, 2026
+                        </div>
+                        <h3 class="news-title" id="news-2-title">Agro Expo – AgriVision 2026 Announced</h3>
+                        <p class="news-excerpt" id="news-2-excerpt">We're proud to announce that we'll be hosting the
+                            first AgriVision Agro Expo showcasing sustainable farming tools, eco-projects, and local
+                            produce, inviting investors, NGOs, universities, and farmers.</p><button
+                            class="read-more-btn" onclick="toggleNewsContent(2)">Read More</button>
+                        <div class="news-full-content" id="news-content-2" style="display: none;">
+                            <p>This landmark event will feature workshops, exhibitions, and networking spaces with
+                                expected outcomes including 1000+ visitors engaged in sustainable agriculture awareness,
+                                20+ exhibitors presenting innovative tools and projects, and 10+ partnerships
+                                established with NGOs, investors, and academic institutions. The expo will significantly
+                                increase visibility for AgriVision's mission on SDG 15 and strengthen collaboration
+                                between local farmers, startups, and global associations.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="news-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-image">
+                        <div class="news-image-placeholder">
+                            <div class="news-image-text">
+                                <img src="1386983b-2bb9-436b-9d48-54ed7bf5ee7e-900x600.jpg"
+                                    alt="AgriVision Innovation Challenge" class="news-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date" id="news-3-date">
+                            March 8, 2026
+                        </div>
+                        <h3 class="news-title" id="news-3-title">Community Training Program Success</h3>
+                        <p class="news-excerpt" id="news-3-excerpt">Over 500 farmers completed our organic farming
+                            certification program, marking a significant milestone in sustainable agriculture education.
+                        </p><button class="read-more-btn" onclick="toggleNewsContent(3)">Read More</button>
+                        <div class="news-full-content" id="news-content-3" style="display: none;">
+                            <p>The comprehensive 6-month program covered soil health, natural pest control, and organic
+                                certification processes. Graduates reported an average 25% increase in crop value and
+                                improved soil quality on their farms.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="news-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="news-image">
+                        <div class="news-image-placeholder">
+                            <div class="news-image-text">
+                                <img src="reforestation-2.jpeg" alt="AgriVision Innovation Challenge" class="news-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date" id="news-4-date">
+                            February 28, 2026
+                        </div>
+                        <h3 class="news-title" id="news-4-title">Reforestation Initiative Plants 10,000 Trees</h3>
+                        <p class="news-excerpt" id="news-4-excerpt">Our volunteers and community partners successfully
+                            planted 10,000 native trees across three provinces, contributing to Tunisia's green
+                            recovery.</p><button class="read-more-btn" onclick="toggleNewsContent(4)">Read More</button>
+                        <div class="news-full-content" id="news-content-4" style="display: none;">
+                            <p>The tree-planting campaign involved 300 volunteers and focused on native species that
+                                support local ecosystems. These trees will help combat desertification and provide
+                                habitat for wildlife while improving air quality.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="testimonials-section" id="testimonials">
+            <h2 class="section-title" id="testimonials-title">What People Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-slider">
+                    <div class="testimonial-track" id="testimonial-track">
+                        <div class="testimonial-card active" data-aos="fade-in">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    💬
+                                </div>
+                                <p class="testimonial-text" id="testimonial-1-text">"Agri Vision Tunisia transformed my
+                                    farming practices. The sustainable techniques I learned increased my harvest by 30%
+                                    while protecting the environment. I'm proud to be part of this green revolution."
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        👨‍🌾
+                                    </div>
+                                    <div class="author-info">
+                                        <h4 class="author-name" id="testimonial-1-name">Ahmed Ben Salem</h4>
+                                        <p class="author-role" id="testimonial-1-role">Organic Farmer, Sfax</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card" data-aos="fade-in">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    💬
+                                </div>
+                                <p class="testimonial-text" id="testimonial-2-text">"The community education programs
+                                    opened my eyes to sustainable agriculture. Now I'm teaching other women in my
+                                    village these valuable techniques. Together, we're building a greener future."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        👩‍🌾
+                                    </div>
+                                    <div class="author-info">
+                                        <h4 class="author-name" id="testimonial-2-name">Fatima Khelifi</h4>
+                                        <p class="author-role" id="testimonial-2-role">Community Leader, Bizerte</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card" data-aos="fade-in">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    💬
+                                </div>
+                                <p class="testimonial-text" id="testimonial-3-text">"As a young entrepreneur, Agri
+                                    Vision Tunisia's support helped me start my eco-friendly agricultural business.
+                                    Their mentorship and resources were invaluable for my success."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        👨‍💼
+                                    </div>
+                                    <div class="author-info">
+                                        <h4 class="author-name" id="testimonial-3-name">Youssef Mansouri</h4>
+                                        <p class="author-role" id="testimonial-3-role">Agri-Entrepreneur, Tunis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls"><button class="testimonial-btn prev-btn"
+                        onclick="changeTestimonial(-1)">‹</button>
+                    <div class="testimonial-dots"><span class="dot active" onclick="currentTestimonial(1)"></span> <span
+                            class="dot" onclick="currentTestimonial(2)"></span> <span class="dot"
+                            onclick="currentTestimonial(3)"></span>
+                    </div><button class="testimonial-btn next-btn" onclick="changeTestimonial(1)">›</button>
+                </div>
+            </div>
+        </section>
+        <section class="cta-section" id="involved">
+            <h2 class="mission-title">Get Involved Today</h2>
+            <p class="mission-text" style="margin-bottom: 0;">Join us in making a difference. Your support helps us
+                create lasting change for Tunisia's agricultural future.</p>
+            <div class="cta-buttons"><a href="#donate" class="cta-button primary" id="donate-button">Donate Now</a> <a
+                    href="#volunteer" class="cta-button secondary" id="volunteer-button">Volunteer</a> <a
+                    href="#contact" class="cta-button secondary" id="contact-button">Contact Us</a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid"><!-- Contact Information -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item"><span class="contact-icon">📍</span>
+                            <div class="contact-details">
+                                <p id="footer-address">123 Avenue Habib Bourguiba<br>
+                                    1000 Tunis, Tunisia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item"><span class="contact-icon">📞</span>
+                            <div class="contact-details">
+                                <p id="footer-phone">+216 71 123 456</p>
+                            </div>
+                        </div>
+                        <div class="contact-item"><span class="contact-icon">✉️</span>
+                            <div class="contact-details">
+                                <p id="footer-email">info@agrivisiontunisia.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Get Involved Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="#donate" id="footer-donate-link">Make a Donation</a></li>
+                        <li><a href="#staff-login" id="footer-staff-link">Staff Member Login</a></li>
+                        <li><a href="#governance" id="footer-governance-link">Governance</a></li>
+                        <li><a href="#code-conduct" id="footer-code-link">Agrivision Code of Conduct</a></li>
+                        <li><a href="#social-guidelines" id="footer-social-link">Social Media Community Guidelines</a>
+                        </li>
+                        <li><a href="#privacy" id="footer-privacy-link">Privacy Policy</a></li>
+                    </ul>
+                </div><!-- Newsletter Signup -->
+                <div class="footer-section">
+                    <h3 class="footer-title" id="footer-newsletter-title">Get Updates from Agrivision</h3>
+                    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                        <div class="form-group"><label for="first-name" class="form-label">First Name</label> <input
+                                type="text" id="first-name" name="firstName" class="form-input"
+                                placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group"><label for="last-name" class="form-label">Last Name</label> <input
+                                type="text" id="last-name" name="lastName" class="form-input"
+                                placeholder="Enter your last name" required>
+                        </div>
+                        <div class="form-group"><label for="email-address" class="form-label">Email Address</label>
+                            <input type="email" id="email-address" name="email" class="form-input"
+                                placeholder="Enter your email address" required>
+                        </div><button type="submit" class="newsletter-btn" id="footer-join-btn">JOIN US</button>
+                    </form><!-- Social Media Links -->
+                    <div class="social-media">
+                        <h4 class="social-title">Follow Us</h4>
+                        <div class="social-links"> <a href="#instagram" class="social-link instagram"
+                                aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor"
+                                        d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5Zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5ZM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10Zm0 1.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 0 1 0-7Zm4.75-.88a.88.88 0 1 0 0 1.76a.88.88 0 0 0 0-1.76Z" />
+                                </svg>
+                            </a>
+                            <a href="#youtube" class="social-link youtube" aria-label="YouTube">
+                                <svg viewbox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor"
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg></a> <a href="#linkedin" class="social-link linkedin" aria-label="LinkedIn">
+                                <svg viewbox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor"
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Copyright -->
+            <div class="footer-bottom">
+                <p class="copyright" id="footer-copyright">© 2025 AgriVision, Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const defaultConfig = {
+            background_color: "#2f855a",
+            surface_color: "#f7fafc",
+            text_color: "#4a5568",
+            primary_action_color: "#2f855a",
+            secondary_action_color: "#ffffff",
+            font_family: "Segoe UI",
+            font_size: 16,
+            hero_title: "Grow Smart. Waste Less. Sustain More.",
+            hero_cta: "Join Us",
+            about_title: "About Us",
+            about_text: "AgriVision Tunisia is a non-profit organization committed to promoting sustainable agriculture and protecting Tunisia's natural resources. We work with farmers, youth, and local communities to restore degraded lands, encourage eco-friendly farming practices, and raise awareness about the importance of preserving biodiversity. Our goal is to build a future where agriculture and nature grow together productively, responsibly, and sustainably.",
+            mission_title: "Our Mission",
+            mission_text: "We strive to combat land degradation and resource overuse by promoting sustainable farming, biodiversity conservation, and community empowerment across Tunisia.",
+            activities_title: "What We Do",
+            activity_1_title: "Eco-Friendly Agriculture",
+            activity_1_desc: "Promoting eco-friendly agriculture that regenerates the soil.",
+            activity_2_title: "Farmer Education",
+            activity_2_desc: "Educating farmers on responsible resource management.",
+            activity_3_title: "Green Technologies",
+            activity_3_desc: "Introducing green technologies that reduce emissions and waste.",
+            activity_4_title: "Community Empowerment",
+            activity_4_desc: "Empowering rural communities with sustainable livelihoods.",
+            activity_5_title: "Local Project Support",
+            activity_5_desc: "Support local project ideas that promote sustainable agriculture.",
+            donate_button: "Donate Now",
+            volunteer_button: "Volunteer",
+            contact_button: "Contact Us",
+            news_title: "Latest News",
+            news_1_date: "April 2, 2024",
+            news_1_title: "AgriVision Innovation Challenge Launched",
+            news_1_excerpt: "We're excited to announce the launch of the \"AgriVision Innovation Challenge\" for eco-project pitches, offering mentorship, workshops, and seed funding with local investors.",
+            news_2_date: "March 20, 2024",
+            news_2_title: "Agro Expo – AgriVision 2026 Announced",
+            news_2_excerpt: "We're proud to announce that we'll be hosting the first AgriVision Agro Expo showcasing sustainable farming tools, eco-projects, and local produce, inviting investors, NGOs, universities, and farmers.",
+            news_3_date: "February 28, 2024",
+            news_3_title: "Reforestation Initiative Plants 10,000 Trees",
+            news_3_excerpt: "Our volunteers and community partners successfully planted 10,000 native trees across three provinces, contributing to Tunisia's green recovery.",
+            testimonials_title: "What People Say",
+            testimonial_1_text: "Agri Vision Tunisia transformed my farming practices. The sustainable techniques I learned increased my harvest by 30% while protecting the environment. I'm proud to be part of this green revolution.",
+            testimonial_1_name: "Ahmed Ben Salem",
+            testimonial_1_role: "Organic Farmer, Sfax",
+            testimonial_2_text: "The community education programs opened my eyes to sustainable agriculture. Now I'm teaching other women in my village these valuable techniques. Together, we're building a greener future.",
+            testimonial_2_name: "Fatima Khelifi",
+            testimonial_2_role: "Community Leader, Bizerte",
+            testimonial_3_text: "As a young entrepreneur, Agri Vision Tunisia's support helped me start my eco-friendly agricultural business. Their mentorship and resources were invaluable for my success.",
+            testimonial_3_name: "Youssef Mansouri",
+            testimonial_3_role: "Agri-Entrepreneur, Tunis"
+        };
+
+        async function onConfigChange(config) {
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+            const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseSize = config.font_size || defaultConfig.font_size;
+            const baseFontStack = 'Tahoma, Geneva, Verdana, sans-serif';
+
+            // Apply colors
+            document.querySelector('.hero').style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${primaryActionColor} 100%)`;
+            document.querySelector('.logo circle').setAttribute('fill', backgroundColor);
+            document.querySelectorAll('.logo-text, .mission-title, .activities-title, .activity-title').forEach(el => {
+                el.style.color = primaryActionColor;
+            });
+            document.querySelectorAll('.nav-links a').forEach(el => {
+                el.style.color = textColor;
+            });
+            document.querySelectorAll('.mission-text, .activity-desc').forEach(el => {
+                el.style.color = textColor;
+            });
+            document.querySelectorAll('.activity-card').forEach(el => {
+                el.style.backgroundColor = surfaceColor;
+            });
+            document.querySelector('.hero-cta').style.backgroundColor = secondaryActionColor;
+            document.querySelector('.hero-cta').style.color = primaryActionColor;
+            document.querySelectorAll('.cta-button.primary').forEach(el => {
+                el.style.backgroundColor = primaryActionColor;
+                el.style.color = secondaryActionColor;
+            });
+            document.querySelectorAll('.cta-button.secondary').forEach(el => {
+                el.style.backgroundColor = secondaryActionColor;
+                el.style.color = primaryActionColor;
+                el.style.borderColor = primaryActionColor;
+            });
+
+            // Apply fonts
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+            // Apply font sizes
+            document.querySelector('.hero-title').style.fontSize = `${baseSize * 2.2}px`;
+            document.querySelector('.hero-cta').style.fontSize = `${baseSize * 1.1}px`;
+            document.querySelectorAll('.mission-title, .activities-title').forEach(el => {
+                el.style.fontSize = `${baseSize * 1.6}px`;
+            });
+            document.querySelector('.mission-text').style.fontSize = `${baseSize * 1.25}px`;
+            document.querySelectorAll('.activity-title').forEach(el => {
+                el.style.fontSize = `${baseSize * 1.5}px`;
+            });
+            document.querySelectorAll('.activity-desc').forEach(el => {
+                el.style.fontSize = `${baseSize}px`;
+            });
+            document.querySelectorAll('.cta-button').forEach(el => {
+                el.style.fontSize = `${baseSize * 1.1}px`;
+            });
+            document.querySelectorAll('.nav-links a').forEach(el => {
+                el.style.fontSize = `${baseSize}px`;
+            });
+
+            // Apply text content
+            document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+            document.getElementById('hero-cta').textContent = config.hero_cta || defaultConfig.hero_cta;
+            document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+            document.getElementById('about-text').textContent = config.about_text || defaultConfig.about_text;
+            document.getElementById('mission-title').textContent = config.mission_title || defaultConfig.mission_title;
+            document.getElementById('mission-text').textContent = config.mission_text || defaultConfig.mission_text;
+            document.getElementById('activities-title').textContent = config.activities_title || defaultConfig.activities_title;
+            document.getElementById('activity-1-title').textContent = config.activity_1_title || defaultConfig.activity_1_title;
+            document.getElementById('activity-1-desc').textContent = config.activity_1_desc || defaultConfig.activity_1_desc;
+            document.getElementById('activity-2-title').textContent = config.activity_2_title || defaultConfig.activity_2_title;
+            document.getElementById('activity-2-desc').textContent = config.activity_2_desc || defaultConfig.activity_2_desc;
+            document.getElementById('activity-3-title').textContent = config.activity_3_title || defaultConfig.activity_3_title;
+            document.getElementById('activity-3-desc').textContent = config.activity_3_desc || defaultConfig.activity_3_desc;
+            document.getElementById('activity-4-title').textContent = config.activity_4_title || defaultConfig.activity_4_title;
+            document.getElementById('activity-4-desc').textContent = config.activity_4_desc || defaultConfig.activity_4_desc;
+            document.getElementById('activity-5-title').textContent = config.activity_5_title || defaultConfig.activity_5_title;
+            document.getElementById('activity-5-desc').textContent = config.activity_5_desc || defaultConfig.activity_5_desc;
+            document.getElementById('donate-button').textContent = config.donate_button || defaultConfig.donate_button;
+            document.getElementById('volunteer-button').textContent = config.volunteer_button || defaultConfig.volunteer_button;
+            document.getElementById('contact-button').textContent = config.contact_button || defaultConfig.contact_button;
+            document.getElementById('news-title').textContent = config.news_title || defaultConfig.news_title;
+            document.getElementById('news-1-date').textContent = config.news_1_date || defaultConfig.news_1_date;
+            document.getElementById('news-1-title').textContent = config.news_1_title || defaultConfig.news_1_title;
+            document.getElementById('news-1-excerpt').textContent = config.news_1_excerpt || defaultConfig.news_1_excerpt;
+            document.getElementById('news-2-date').textContent = config.news_2_date || defaultConfig.news_2_date;
+            document.getElementById('news-2-title').textContent = config.news_2_title || defaultConfig.news_2_title;
+            document.getElementById('news-2-excerpt').textContent = config.news_2_excerpt || defaultConfig.news_2_excerpt;
+            document.getElementById('news-3-date').textContent = config.news_3_date || defaultConfig.news_3_date;
+            document.getElementById('news-3-title').textContent = config.news_3_title || defaultConfig.news_3_title;
+            document.getElementById('news-3-excerpt').textContent = config.news_3_excerpt || defaultConfig.news_3_excerpt;
+            document.getElementById('testimonials-title').textContent = config.testimonials_title || defaultConfig.testimonials_title;
+            document.getElementById('testimonial-1-text').textContent = config.testimonial_1_text || defaultConfig.testimonial_1_text;
+            document.getElementById('testimonial-1-name').textContent = config.testimonial_1_name || defaultConfig.testimonial_1_name;
+            document.getElementById('testimonial-1-role').textContent = config.testimonial_1_role || defaultConfig.testimonial_1_role;
+            document.getElementById('testimonial-2-text').textContent = config.testimonial_2_text || defaultConfig.testimonial_2_text;
+            document.getElementById('testimonial-2-name').textContent = config.testimonial_2_name || defaultConfig.testimonial_2_name;
+            document.getElementById('testimonial-2-role').textContent = config.testimonial_2_role || defaultConfig.testimonial_2_role;
+            document.getElementById('testimonial-3-text').textContent = config.testimonial_3_text || defaultConfig.testimonial_3_text;
+            document.getElementById('testimonial-3-name').textContent = config.testimonial_3_name || defaultConfig.testimonial_3_name;
+            document.getElementById('testimonial-3-role').textContent = config.testimonial_3_role || defaultConfig.testimonial_3_role;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.surface_color || defaultConfig.surface_color,
+                        set: (value) => {
+                            config.surface_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ surface_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                        set: (value) => {
+                            config.primary_action_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ primary_action_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                        set: (value) => {
+                            config.secondary_action_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ secondary_action_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["hero_title", config.hero_title || defaultConfig.hero_title],
+                ["hero_cta", config.hero_cta || defaultConfig.hero_cta],
+                ["about_title", config.about_title || defaultConfig.about_title],
+                ["about_text", config.about_text || defaultConfig.about_text],
+                ["mission_title", config.mission_title || defaultConfig.mission_title],
+                ["mission_text", config.mission_text || defaultConfig.mission_text],
+                ["activities_title", config.activities_title || defaultConfig.activities_title],
+                ["activity_1_title", config.activity_1_title || defaultConfig.activity_1_title],
+                ["activity_1_desc", config.activity_1_desc || defaultConfig.activity_1_desc],
+                ["activity_2_title", config.activity_2_title || defaultConfig.activity_2_title],
+                ["activity_2_desc", config.activity_2_desc || defaultConfig.activity_2_desc],
+                ["activity_3_title", config.activity_3_title || defaultConfig.activity_3_title],
+                ["activity_3_desc", config.activity_3_desc || defaultConfig.activity_3_desc],
+                ["activity_4_title", config.activity_4_title || defaultConfig.activity_4_title],
+                ["activity_4_desc", config.activity_4_desc || defaultConfig.activity_4_desc],
+                ["activity_5_title", config.activity_5_title || defaultConfig.activity_5_title],
+                ["activity_5_desc", config.activity_5_desc || defaultConfig.activity_5_desc],
+                ["donate_button", config.donate_button || defaultConfig.donate_button],
+                ["volunteer_button", config.volunteer_button || defaultConfig.volunteer_button],
+                ["contact_button", config.contact_button || defaultConfig.contact_button]
+            ]);
+        }
+
+        // Testimonial slider functionality
+        let currentTestimonialIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const dots = document.querySelectorAll('.dot');
+
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.classList.toggle('active', i === index);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            const track = document.getElementById('testimonial-track');
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function changeTestimonial(direction) {
+            currentTestimonialIndex += direction;
+
+            if (currentTestimonialIndex >= testimonials.length) {
+                currentTestimonialIndex = 0;
+            } else if (currentTestimonialIndex < 0) {
+                currentTestimonialIndex = testimonials.length - 1;
+            }
+
+            showTestimonial(currentTestimonialIndex);
+        }
+
+        function currentTestimonial(index) {
+            currentTestimonialIndex = index - 1;
+            showTestimonial(currentTestimonialIndex);
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            changeTestimonial(1);
+        }, 5000);
+
+        // News toggle functionality
+        function toggleNewsContent(newsId) {
+            const content = document.getElementById(`news-content-${newsId}`);
+            const button = content.previousElementSibling;
+
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                button.textContent = 'Read Less';
+                button.style.background = 'linear-gradient(135deg, #276749, #2f855a)';
+            } else {
+                content.style.display = 'none';
+                button.textContent = 'Read More';
+                button.style.background = 'linear-gradient(135deg, #2f855a, #38a169)';
+            }
+        }
+
+        // Smooth scrolling function
+        function smoothScroll(target) {
+            event.preventDefault();
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('aos-animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with data-aos attributes
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Parallax effect for hero section
+        function initParallaxEffect() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                const heroPattern = document.querySelector('.hero-pattern');
+
+                if (hero && heroPattern) {
+                    heroPattern.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+        }
+
+        // Counter animation for statistics (if needed)
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+            });
+        }
+
+        // Newsletter form handler
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const submitBtn = form.querySelector('.newsletter-btn');
+            const firstName = form.querySelector('#first-name').value;
+            const lastName = form.querySelector('#last-name').value;
+            const email = form.querySelector('#email-address').value;
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'JOINING...';
+
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.textContent = `Thank you ${firstName}! You've successfully joined our newsletter.`;
+
+                // Insert success message after the form
+                form.parentNode.insertBefore(successMessage, form.nextSibling);
+
+                // Reset form
+                form.reset();
+
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'JOIN US';
+
+                // Remove success message after 5 seconds
+                setTimeout(() => {
+                    if (successMessage.parentNode) {
+                        successMessage.parentNode.removeChild(successMessage);
+                    }
+                }, 5000);
+
+            }, 1500);
+        }
+
+        // Initialize all interactive features
+        document.addEventListener('DOMContentLoaded', () => {
+            initScrollAnimations();
+            initParallaxEffect();
+
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.activity-card, .news-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.cta-button, .read-more-btn, .testimonial-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = button.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+          `;
+
+                    button.style.position = 'relative';
+                    button.style.overflow = 'hidden';
+                    button.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+    `;
+        document.head.appendChild(style);
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'999ce2aed6184dfe',t:'MTc2MjM1MTMxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
